@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import PeopleList from '../../components/PeopleList/PeopleList';
+import ErrorComponent from '../../components/ErrorComponent/ErrorComponent';
 
 import { getApiResource } from '../../utils/network';
 import { API_PEOPLE } from '../../constants/api';
@@ -42,7 +43,7 @@ const PeoplePage = () => {
 	
 	return (
 		<>
-			{errorApi ? <h2 style={{color: '#fff'}}>Error</h2>
+			{errorApi ? <ErrorComponent />
 			: (
 				<>
 					{peoples && <PeopleList peoples={peoples}/>}
@@ -53,12 +54,3 @@ const PeoplePage = () => {
 }
 
 export default PeoplePage;
-
-
-			{/* <ul>
-				{/* {
-					peoples.length > 0 ? 
-						peoples.map(({name, url}) => <li key={url}>{name}</li>) :
-						<li>Loading...</li>
-				} */}
-			{/* </ul> */}
