@@ -3,8 +3,17 @@
   --color-black: #000;
   --color-dark: #101000;
   --color-yellow: #ffff22;
+  --color-blue: #6a83fb;
+  --color-violet: #ae72c2;
 
   --border-radius-small: 3px;
+
+  --text-shadow-yellow: 
+    0 0 2px var(--color-white),
+    0 0 40px var(--color-blue);
+
+    --theme-default-bgimg: url('https://dev-pandaren.github.io/react-star-wars/static/media/bg.29b25be3.jpg')
+    
 } 
 
 body {
@@ -12,6 +21,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-image: var(--theme-default-bgimg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-attachment: fixed;
 }
 
 code {

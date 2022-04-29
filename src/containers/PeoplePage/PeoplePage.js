@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import PeopleList from '../../components/PeopleList/PeopleList';
 import { withError } from '../../hoc-helper/whithError';
@@ -8,7 +9,7 @@ import { getPeopleId, getImgCharacters } from '../../services/getPeopleDataServi
 
 const PeoplePage = ({setErrorApi}) => {
 
-	const [peoples, setPeoples] = useState([]);
+	const [people, setPeople] = useState([]);
 
 	const getResource = async (url) => {
 		const res = await getApiResource(url)
@@ -26,7 +27,7 @@ const PeoplePage = ({setErrorApi}) => {
 				}
 			});
 
-			setPeoples(peopleList)
+			setPeople(peopleList)
 			setErrorApi(false)
 		} else {
 			setErrorApi(true)
@@ -41,9 +42,14 @@ const PeoplePage = ({setErrorApi}) => {
 
 	return (
 		<>
-			{peoples && <PeopleList peoples={peoples}/>}
+			<h1 style={{color:'#fff'}}>People page</h1>
+			{people && <PeopleList people={people}/>}
 		</>
 	);
+}
+
+PeoplePage.propTypes = {
+	setErrorApi: PropTypes.func
 }
 
 export default withError(PeoplePage);
