@@ -1,0 +1,28 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 10vh;
+}
+.img {
+	height: 450px;
+	width: 450px;
+	background-image: url(../../static/notFoundImg.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.text {
+	font-size: 1.3rem;
+	margin-bottom: 10px;
+	font-weight: 600;
+	color: rgb(235, 109, 109);
+	text-shadow: 0px 0px 2px #f332, 0 0 3px rgb(201, 163, 82)
+
+}
+.text span {
+	text-decoration: underline;
+}

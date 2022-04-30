@@ -1,6 +1,6 @@
 
 export const getPeopleId = (url) => {
-	const id = url.match(/\d+/)
+	const id = url.match(/\d+/g)
 	return +id[0]
 }
 

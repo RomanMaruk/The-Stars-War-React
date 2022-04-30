@@ -1,7 +1,7 @@
 .list__container {
 	display: flex;
 	flex-wrap: wrap;
-	margin: 10px auto;
+	margin: 10px auto 40px;
 	padding: 0;
 	list-style: none;
 	gap: 35px;
