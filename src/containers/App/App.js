@@ -10,22 +10,21 @@ import style from './App.module.css'
 const App = () => {
   return (
     <>
-
-    <BrowserRouter>
-      <Header/>
-
-      <Routes>
-        { routesConfig.map((rout, index) =>
-          <Route 
-            key={index} 
-            path={rout.path}
-            exact={rout.exact}
-            element={rout.element} 
-          />
-        )}
-      </Routes>
-    </BrowserRouter>
-
+      <div className={style.container}>
+        <BrowserRouter>
+          <Header/>
+          <Routes>
+            { routesConfig.map((rout, index) =>
+              <Route 
+                key={index} 
+                path={rout.path}
+                exact={rout.exact}
+                element={rout.element} 
+              />
+            )}
+          </Routes>
+        </BrowserRouter>
+      </div>
     </>
   );
 }

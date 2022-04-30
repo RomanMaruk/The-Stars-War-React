@@ -9,3 +9,7 @@
 .margins {
 	margin-top: 500px;
 }
+.container {
+	margin: 10px auto;
+	max-width: 1200px;
+}
