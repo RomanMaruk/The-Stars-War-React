@@ -4,7 +4,7 @@ import styles from './PeopleList.module.css';
 import PropTypes from 'prop-types';
 
 const PeopleList = ({ people }) => {
-	
+
 	return (
 		<>
 			<ul className={styles.list__container}>

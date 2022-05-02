@@ -8,12 +8,14 @@ import { API_CHARACTER } from '../../constants/api';
 import { getImgCharacters } from '../../services/getPeopleDataServices';
 import { getApiResource } from '../../utils/network';
 import style from './CharacterPage.module.css';
+import CharacterFilms from '../../components/CharacterFilms/CharacterFilms';
 
 const CharacterPage = ({setErrorApi}) => {
 	const { id } = useParams();
 	const [characterName, setCharacterName] = useState('');
 	const [characterInfo, setCharacterInfo] = useState();
 	const [characterImg, setCharacterImg] = useState('');
+	const [characterFilms, setCharacterFilms] = useState(null);
 
 	const requestCharacter = async (id) => {
 		const res = await getApiResource(API_CHARACTER + id);
@@ -30,8 +32,8 @@ const CharacterPage = ({setErrorApi}) => {
 				{title: 'Mass', data: res.mass},
 				{title: 'Skin Color', data: res.skin_color},
 			]);
-			setCharacterImg(getImgCharacters(id))
-			// films: (2) ['https://swapi.dev/api/films/2/', 'https://swapi.dev/api/films/3/']
+			setCharacterImg(getImgCharacters(id));
+			res.films.length && setCharacterFilms(res.films);
 			setErrorApi(false)
 		} else {
 			setErrorApi(true)
@@ -60,6 +62,7 @@ const CharacterPage = ({setErrorApi}) => {
 							))}
 						</ul>
 					)}
+					{characterFilms && <CharacterFilms characterFilms={characterFilms}/>}
 				</div>
 			</div>
 		</>

@@ -1,0 +1,29 @@
+.wrap {
+	padding: 0;
+}
+.list__container {
+	list-style: none;
+	margin: 20px 0 0;
+	padding: 20px 0;
+	min-width: 300px;
+}
+.list__item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.item__episode {
+	background-color: #f75d83;
+	margin-right: 7px;
+	text-shadow: 0 0 2px var(--color-white),0 0 40px var(--color-blue);
+	padding: 5px;
+	border-radius: 3px;
+}
+.item__colon {
+	font-weight: bold;
+	margin-right: 7px;
+}
+.item__title {
+	text-shadow: 0 0 5px var(--color-white),0 0 40px var(--color-yellow);;
+}

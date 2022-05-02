@@ -13,6 +13,13 @@ export const getApiResource = async (url) => {
 		return resolt
 }
 
+export const makeRequests = async (urls) => {
+	const filmsRequest = await Promise.all(urls.map(res => {
+		return fetch(res).then(res => res.json())
+	}));
+	return filmsRequest
+}
+
 // export const getApiResource = async (url) => {
 // 	try {
 // 			const res = await fetch(url);

@@ -9,6 +9,7 @@ const CharacterLinkBack = () => {
 	
 	const handleGoBack = (e) => {
 		e.preventDefault()
+		
 		navigate(-1)
 	}
 	
