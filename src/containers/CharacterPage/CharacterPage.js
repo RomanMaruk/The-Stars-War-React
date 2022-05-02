@@ -1,6 +1,8 @@
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 
+import CharacterLinkBack from '../../components/CharacterLinkBack/CharacterLinkBack';
+
 import { withError } from '../../hoc-helper/whithError';
 import { API_CHARACTER } from '../../constants/api';
 import { getImgCharacters } from '../../services/getPeopleDataServices';
@@ -8,7 +10,7 @@ import { getApiResource } from '../../utils/network';
 import style from './CharacterPage.module.css';
 
 const CharacterPage = ({setErrorApi}) => {
-	const {id} = useParams();
+	const { id } = useParams();
 	const [characterName, setCharacterName] = useState('');
 	const [characterInfo, setCharacterInfo] = useState();
 	const [characterImg, setCharacterImg] = useState('');
@@ -42,6 +44,7 @@ const CharacterPage = ({setErrorApi}) => {
 
 	return (
 		<>
+			<CharacterLinkBack/>
 			<div className={style.container} style={{color: '#fff'}}>
 				<h2 className={style.name}>{characterName}</h2>
 				<div className={style.wrap}>

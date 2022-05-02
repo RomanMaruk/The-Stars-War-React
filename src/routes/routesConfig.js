@@ -6,7 +6,6 @@ import CharacterPage from "../containers/CharacterPage/CharacterPage";
 const routesConfig = [
 	{
 		path: '/',
-		exact: true,
 		element: <HomePage/>
 	},
 	{
@@ -16,17 +15,14 @@ const routesConfig = [
 	},
 	{
 		path: 'people/:id',
-		exact: true,
 		element: <CharacterPage/>
 	},
 	{
 		path: '/not-found',
-		exact: true,
 		element: <NotFounded/>
 	},
 	{
 		path: '*',
-		exact: false,
 		element: <NotFounded/>
 	},
 

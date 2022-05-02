@@ -1,0 +1,20 @@
+.href {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	justify-content: start;
+	align-items: center;
+	text-decoration: none;
+}
+
+.href__svg {
+	width: 40px;
+	margin: 0 10px;
+}
+.href__text {
+	color: var(--color-yellow);
+	font-weight: bold;
+}
+.href:hover {
+	text-shadow: var(--text-shadow-yellow);
+}
