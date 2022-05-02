@@ -16,6 +16,9 @@
 	background-color: var(--color-white);
 	text-align: center
 }
+.people__name {
+	color: rgb(19, 18, 18);
+}
 .person__photo {
 	width: 100%;
 	height: 260px;
