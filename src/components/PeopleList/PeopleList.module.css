@@ -8,21 +8,3 @@
 	max-width: 1200px;
 	justify-content: center;
 }
-.list__item {
-	width: 200px;
-	height: 300px;
-	border-radius: var(--border-radius-small);
-	cursor: pointer;
-	background-color: var(--color-white);
-	text-align: center
-}
-.people__name {
-	color: rgb(19, 18, 18);
-}
-.person__photo {
-	width: 100%;
-	height: 260px;
-	object-fit: cover;
-	object-position: top center;
-	border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
-}
