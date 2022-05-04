@@ -13,9 +13,6 @@ const CharacterFilms = ({characterFilms}) => {
 		})();
 	}, []);
 
-	console.log(filmsName);
-	
-	
 	return (
 		<>
 			<div className={style.wrap}>

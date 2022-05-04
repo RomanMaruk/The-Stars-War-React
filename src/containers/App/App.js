@@ -18,7 +18,6 @@ const App = () => {
               <Route 
                 key={index} 
                 path={rout.path}
-                exact={rout.exact}
                 element={rout.element} 
               />
             )}
