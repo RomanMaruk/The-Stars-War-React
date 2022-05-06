@@ -15,16 +15,10 @@ const ButtonFavorite = ({character, favorite}) => {
 	const dispatch = useDispatch();
 	const storeData = useSelector(state => state.characrerReducer)
 
-
-
 	useEffect(() => {
 		storeData[id] ? setCharacterFavorite(true) : setCharacterFavorite(false)
 	}, [storeData]);
-	
-	
-	
-	
-	
+
 	const set = () => {
 		if (characterFavorite) {
 			dispatch(removeCharactersFromFavorite(id+''))
@@ -36,7 +30,6 @@ const ButtonFavorite = ({character, favorite}) => {
 				}
 			}))
 		}
-
 
 	}
 

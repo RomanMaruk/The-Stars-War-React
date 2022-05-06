@@ -7,8 +7,6 @@ import style from './ListOfPeople.module.css';
 const ListOfPeople = ({person}) => {
 	const {id, name, img} = person;
 
-	const favoriteCharacter = useSelector(state => state.characrerReducer)
-
 	return (
 		<>
 			<li className={style.list__item} key={id}>

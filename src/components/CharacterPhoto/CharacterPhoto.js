@@ -3,7 +3,7 @@ import ButtonFavorite from '../ButtonFavorite/ButtonFavorite';
 import style from './CharacterPhoto.module.css';
 
 const CharacterPhoto = ({character}) => {
-	const {id, name, img, favorite} = character;
+	const {id, name, img} = character;
 	
 	return (
 		<div className={style.container}>
