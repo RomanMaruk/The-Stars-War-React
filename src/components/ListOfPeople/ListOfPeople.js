@@ -1,19 +1,18 @@
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import ButtonFavorite from '../ButtonFavorite/ButtonFavorite';
 import style from './ListOfPeople.module.css';
 
 const ListOfPeople = ({person}) => {
-	const {id, name, img, favorite} = person;
+	const {id, name, img} = person;
 
-	const list = () => {
-		console.log('list')
-	}
+	const favoriteCharacter = useSelector(state => state.characrerReducer)
 
 	return (
 		<>
 			<li className={style.list__item} key={id}>
-				<ButtonFavorite key={id} character={{id, name, img, favorite}}/>
+				<ButtonFavorite key={id} character={{id, name, img}}/>
 				<Link to={`/people/${id}`}>
 					<div className={style.favorite}>
 					</div>

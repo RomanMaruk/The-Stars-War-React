@@ -18,7 +18,7 @@ const PeoplePage = ({setErrorApi}) => {
 	const [donlowd, setDowlowd] = useState(true)
 	const [prevPage, setPrevPage] = useState(null);
 	const [nextPage, setNextPage] = useState(null);
-	const [counterPage, setCounterPage] = useState(1)
+	const [counterPage, setCounterPage] = useState(1);
 	
 	const query = useQueryUrl();
 	const queryPage = query.get('page')
@@ -36,7 +36,6 @@ const PeoplePage = ({setErrorApi}) => {
 					name,
 					img,
 					id,
-					favorite: storeFavorite.some(item => item === id+'')
 				}
 			});
 

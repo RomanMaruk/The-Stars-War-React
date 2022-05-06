@@ -11,6 +11,7 @@ import style from './CharacterPage.module.css';
 import CharacterFilms from '../../components/CharacterFilms/CharacterFilms';
 import ButtonFavorite from '../../components/ButtonFavorite/ButtonFavorite';
 import CharacterPhoto from '../../components/CharacterPhoto/CharacterPhoto';
+import { useSelector } from 'react-redux';
 
 const CharacterPage = ({setErrorApi}) => {
 	const { id } = useParams();
@@ -18,6 +19,9 @@ const CharacterPage = ({setErrorApi}) => {
 	const [characterInfo, setCharacterInfo] = useState();
 	const [characterImg, setCharacterImg] = useState('');
 	const [characterFilms, setCharacterFilms] = useState(null);
+	const [favorite, setFavorite] = useState();
+
+	const storeData = useSelector(state => state.characrerReducer)
 
 	const requestCharacter = async (id) => {
 		const res = await getApiResource(API_CHARACTER + id);
@@ -43,6 +47,7 @@ const CharacterPage = ({setErrorApi}) => {
 	
 	useEffect(() => {
 		requestCharacter(id)
+		storeData[id] ? setFavorite(true) : setFavorite(false)
 	}, []);
 
 	return (
@@ -51,7 +56,7 @@ const CharacterPage = ({setErrorApi}) => {
 			<div className={style.container} style={{color: '#fff'}}>
 				<h2 className={style.name}>{characterName}</h2>
 				<div className={style.wrap} style={{position: 'relative'}}>
-					<CharacterPhoto character={{id, name: characterName, img: characterImg, favorite: null}} />
+					<CharacterPhoto character={{id, name: characterName, img: characterImg, favorite}} />
 					{characterInfo && (
 						<ul className={style.character__info}>
 							{characterInfo.map(({title, data}) => (
