@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import PeopleNavigation from '../../components/PeopleNavigation/PeopleNavigation';
@@ -11,7 +12,8 @@ import { getPeopleId, getImgCharacters } from '../../services/getPeopleDataServi
 import { useQueryUrl } from '../../hooks/useQuireUrl';
 
 const PeoplePage = ({setErrorApi}) => {
-	
+	const storeFavorite = useSelector((state) => Object.keys(state.characrerReducer));
+
 	const [people, setPeople] = useState([]);
 	const [donlowd, setDowlowd] = useState(true)
 	const [prevPage, setPrevPage] = useState(null);
@@ -24,7 +26,6 @@ const PeoplePage = ({setErrorApi}) => {
 	const getResource = async (url) => {
 		setDowlowd(true)
 		const res = await getApiResource(url)
-		console.log(res)
 		
 		if (res) {
 			const peopleList = await res.results.map(({name, url}) => {
@@ -34,7 +35,8 @@ const PeoplePage = ({setErrorApi}) => {
 				return {
 					name,
 					img,
-					id
+					id,
+					favorite: storeFavorite.some(item => item === id+'')
 				}
 			});
 

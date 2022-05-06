@@ -1,10 +1,10 @@
 
 export const setCharactersToFavorite = (character) => ({
 	type: 'ADD_CHARACTERS_TO_FAVOVORITE',
-	paylod: character
+	payload: character
 })
 
-export const removeCharactersFromFavorite = () => ({
+export const removeCharactersFromFavorite = (personId) => ({
 	type: 'REMOVE_CHARACTERS_FROM_FAVOVORITE',
-	payload: ''
+	payload: personId
 })

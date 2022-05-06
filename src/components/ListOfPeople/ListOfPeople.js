@@ -4,12 +4,16 @@ import ButtonFavorite from '../ButtonFavorite/ButtonFavorite';
 import style from './ListOfPeople.module.css';
 
 const ListOfPeople = ({person}) => {
-	const {id, name, img} = person
-	
+	const {id, name, img, favorite} = person;
+
+	const list = () => {
+		console.log('list')
+	}
+
 	return (
 		<>
 			<li className={style.list__item} key={id}>
-				<ButtonFavorite character={{id, name, img}}/>
+				<ButtonFavorite key={id} character={{id, name, img, favorite}}/>
 				<Link to={`/people/${id}`}>
 					<div className={style.favorite}>
 					</div>
