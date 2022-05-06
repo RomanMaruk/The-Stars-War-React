@@ -9,6 +9,8 @@ import { getImgCharacters } from '../../services/getPeopleDataServices';
 import { getApiResource } from '../../utils/network';
 import style from './CharacterPage.module.css';
 import CharacterFilms from '../../components/CharacterFilms/CharacterFilms';
+import ButtonFavorite from '../../components/ButtonFavorite/ButtonFavorite';
+import CharacterPhoto from '../../components/CharacterPhoto/CharacterPhoto';
 
 const CharacterPage = ({setErrorApi}) => {
 	const { id } = useParams();
@@ -19,7 +21,6 @@ const CharacterPage = ({setErrorApi}) => {
 
 	const requestCharacter = async (id) => {
 		const res = await getApiResource(API_CHARACTER + id);
-		
 
 		if (res) {
 			setCharacterName(res.name)
@@ -49,8 +50,8 @@ const CharacterPage = ({setErrorApi}) => {
 			<CharacterLinkBack/>
 			<div className={style.container} style={{color: '#fff'}}>
 				<h2 className={style.name}>{characterName}</h2>
-				<div className={style.wrap}>
-					<img className={style.character__img} src={characterImg} alt="" />
+				<div className={style.wrap} style={{position: 'relative'}}>
+					<CharacterPhoto character={{id, name: characterName, img: characterImg, favorite: null}} />
 					{characterInfo && (
 						<ul className={style.character__info}>
 							{characterInfo.map(({title, data}) => (

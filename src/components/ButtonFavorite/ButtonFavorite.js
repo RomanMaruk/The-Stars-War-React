@@ -19,14 +19,14 @@ const ButtonFavorite = ({character}) => {
 		if (character.favorite) {
 			dispatch(removeCharactersFromFavorite(id+''))
 		} else {
-		dispatch(setCharactersToFavorite({
-			[id]: {
-				name,
-				img,
-				id,
-				favorite: true
-			}
-		}))
+			dispatch(setCharactersToFavorite({
+				[id]: {
+					name,
+					img,
+					id,
+					favorite: true
+				}
+			}))
 		}
 
 
