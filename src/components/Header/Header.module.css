@@ -1,6 +1,6 @@
 .container {
 	display: flex;
-	justify-content: start;
+	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 25px;
 }
@@ -29,4 +29,27 @@
 	border: 2px solid var( --color-violet);
 	border-radius: 3px;
 	color: var(--color-violet)
+}
+
+.favorite__wrap {
+	position: relative;
+}
+
+.favorite__img {
+	width: 45px;
+}
+.favorite__count {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: -5px;
+	top: -5px;
+	font-size: 18px;
+	background-color: #fff;
+	padding: 5px;
+	border-radius: 50%;
+	font-weight: bold;
+	color: #585757;
 }

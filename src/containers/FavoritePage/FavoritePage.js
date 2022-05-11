@@ -12,7 +12,7 @@ const FavoritePage = () => {
 	useEffect(() => {
 		const arr = Object.entries(storeData);
 
-		if (arr.length) {
+		if (arr.length >= 0) {
 			const res = arr.map(item => {
 				return {
 					id: item[0],
@@ -26,7 +26,7 @@ const FavoritePage = () => {
 
 	return (
 		<>
-		<h2 style={{color: '#fff'}}>Favorite list</h2>
+			<h2 style={{color: '#fff'}}>Favorite list</h2>
 			{people.length
 				? <PeopleList people={people} />
 				: <h2 style={{color: '#fff'}}>No data</h2>
