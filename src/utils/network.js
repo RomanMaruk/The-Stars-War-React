@@ -1,17 +1,17 @@
 // import { API_PEOPLE } from '../constants/api'
 
-export const getApiResource = async (url) => {
-	const resolt = await fetch(url)
-		.then(res => {
-				if (!res.ok) {
-					console.log('Could not fetch data.', res.status)
-					return false
-				}
-				return res.json()
-		})
+// export const getApiResource = async (url) => {
+// 	const resolt = await fetch(url)
+// 		.then(res => {
+// 				if (!res.ok) {
+// 					console.log('Could not fetch data.', res.status)
+// 					return false
+// 				}
+// 				return res.json()
+// 		})
 
-		return resolt
-}
+// 		return resolt
+// }
 
 export const makeRequests = async (urls) => {
 	const filmsRequest = await Promise.all(urls.map(res => {
@@ -20,21 +20,21 @@ export const makeRequests = async (urls) => {
 	return filmsRequest
 }
 
-// export const getApiResource = async (url) => {
-// 	try {
-// 			const res = await fetch(url);
+export const getApiResource = async (url) => {
+	try {
+			const res = await fetch(url);
 
-// 			if (!res.ok) {
-// 					console.error('Could not fetch.', res.status);
-// 					return false;
-// 			}
+			if (!res.ok) {
+					console.error('Could not fetch.', res.status);
+					return false;
+			}
 
-// 			return await res.json(); 
-// 	} catch (error) {
-// 			console.error('Could not fetch.', error.message);
-// 			return false;
-// 	}
-// }
+			return await res.json(); 
+	} catch (error) {
+			console.error('Could not fetch.', error.message);
+			return false;
+	}
+}
 
 // (async () => {
 // 	const body = await getApiResource( API_PEOPLE)

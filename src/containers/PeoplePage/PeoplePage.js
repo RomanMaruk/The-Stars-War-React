@@ -12,8 +12,6 @@ import { getPeopleId, getImgCharacters } from '../../services/getPeopleDataServi
 import { useQueryUrl } from '../../hooks/useQuireUrl';
 
 const PeoplePage = ({setErrorApi}) => {
-	const storeFavorite = useSelector((state) => Object.keys(state.characrerReducer));
-
 	const [people, setPeople] = useState([]);
 	const [donlowd, setDowlowd] = useState(true)
 	const [prevPage, setPrevPage] = useState(null);
@@ -46,8 +44,8 @@ const PeoplePage = ({setErrorApi}) => {
 			setCounterPage(getPeopleId(url))
 			setErrorApi(false)
 		} else {
-			setErrorApi(true)
 			setDowlowd(false)
+			setErrorApi(true)
 		}
 		
 	}
